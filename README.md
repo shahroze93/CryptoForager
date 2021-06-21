@@ -100,7 +100,7 @@ Below is the object data for the reference currencies with reference currencies 
 
 ## Wireframes
 
-[]
+[https://imgur.com/NP3TRqV] - wireframce
 
 ### MVP/PostMVP
 
@@ -132,7 +132,7 @@ Below is the object data for the reference currencies with reference currencies 
 
 ## Priority Matrix
 
-
+[https://imgur.com/NdUpOuy] Priority Matrix
 
 ## Timeframes
 
