@@ -31,7 +31,7 @@ Below is the object data that returns additional detailed information the crypto
 
 <details>
 <summary>Click to expand</summary>
-<p>
+
 ```json
 {
     "id": "bitcoin",
@@ -4853,7 +4853,6 @@ Below is the object data that returns additional detailed information the crypto
     ]
 }
 ```
-</p>	
 </details>
 
 Below is the object data for the reference currencies with reference currencies from the coingecko API.
