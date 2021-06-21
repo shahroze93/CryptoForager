@@ -1,6 +1,3 @@
-# CrytoForager
-An App for searching up pricing and other information on cryptocurrencies
-
 # Project Overview
 
 ## CryptoForager
