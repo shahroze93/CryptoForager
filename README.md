@@ -97,7 +97,7 @@ Below is the object data for the reference currencies with reference currencies 
 
 ## Wireframes
 
-[https://imgur.com/NP3TRqV] - wireframce
+[https://imgur.com/NP3TRqV]
 
 ### MVP/PostMVP
 
