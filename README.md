@@ -3,44 +3,122 @@ An App for searching up pricing and other information on cryptocurrencies
 
 # Project Overview
 
-## Project Name
+## CryptoForager
 
 The name of your project with deployed URL.
 
 ## Project Description
 
-Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
+An App for searching up pricing and other information on cryptocurrencies. The project will append prices, 24hr change in price, 24 trade volume, Market Cap and images of the cryptocurrency coins from the coinrank api that I will be using.
 
 ## API and Data Sample
 
-Specify the API you are using and include a link. Show us a snippet of JSON returned by your API so we know you can access it and get the info you need
+The API I am using is from coingecko.com. One of the API's functionalities is a individual coin search, which returns a list of data objects for the coin being searched. Below is the object data for the crypto currency bitcoin with reference currency of usd from the coingecko API.
+
+[https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true&include_last_updated_at=true]
+
+```Json
+{
+    "bitcoin": {
+        "usd": 32683,
+        "usd_market_cap": 608091493951.057,
+        "usd_24h_vol": 49983080500.82763,
+        "usd_24h_change": -8.587783487711413,
+        "last_updated_at": 1624305808
+    }
+}
+```
+Below is the object data for the reference currencies with reference currencies from the coingecko API.
+
+[https://api.coingecko.com/api/v3/simple/supported_vs_currencies]
+
+```Json
+[
+    "btc",
+    "eth",
+    "ltc",
+    "bch",
+    "bnb",
+    "eos",
+    "xrp",
+    "xlm",
+    "link",
+    "dot",
+    "yfi",
+    "usd",
+    "aed",
+    "ars",
+    "aud",
+    "bdt",
+    "bhd",
+    "bmd",
+    "brl",
+    "cad",
+    "chf",
+    "clp",
+    "cny",
+    "czk",
+    "dkk",
+    "eur",
+    "gbp",
+    "hkd",
+    "huf",
+    "idr",
+    "ils",
+    "inr",
+    "jpy",
+    "krw",
+    "kwd",
+    "lkr",
+    "mmk",
+    "mxn",
+    "myr",
+    "ngn",
+    "nok",
+    "nzd",
+    "php",
+    "pkr",
+    "pln",
+    "rub",
+    "sar",
+    "sek",
+    "sgd",
+    "thb",
+    "try",
+    "twd",
+    "uah",
+    "vef",
+    "vnd",
+    "zar",
+    "xdr",
+    "xag",
+    "xau",
+    "bits",
+    "sats"
+]
+```
 
 ## Wireframes
 
-Upload images of your wireframes to an image hosting site or add them to an assets folder in your repo and link them here with a description of each specific wireframe.
+[]
 
 ### MVP/PostMVP
 
-The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
-
 #### MVP 
-*These are examples only. Replace with your own MVP features.*
 
 - Find and use external api 
-- Render data on page 
-- Allow user to choose favorites 
+- Retrieve crypto coin data for the coin being searched
+- Render data on page
+- retrieve dropdown list of reference currency
+- Allow user to choose reference currency & return crypto coin data in the selected reference currency
 
 #### PostMVP  
-*These are examples only. Replace with your own Post-MVP features.*
 
-- Add second API
-- Use local storage to save user favorites
+- Add second API from coinranking.com to retrieve data on multiple coins
+- render the data on page
+- add mediaquery for mobile devices
 
 ## Project Schedule
-
-This schedule will be used to keep track of your progress throughout the week and align with our expectations.  
-
-You are **responsible** for scheduling time with your squad to seek approval for each deliverable by the end of the corresponding day, excluding `Saturday` and `Sunday`.
 
 |  Day | Deliverable | Status
 |---|---| ---|
@@ -49,23 +127,38 @@ You are **responsible** for scheduling time with your squad to seek approval for
 |June 23| Pseudocode / actual code | Incomplete
 |June 24| Initial Clickable Model  | Incomplete
 |June 25| MVP | Incomplete
+|June 26| Post-MVP | Incomplete
 |June 28| Presentations | Incomplete
 
 ## Priority Matrix
 
-Include a full list of features that have been prioritized based on the `Time and Importance` Matrix.  Link this image in a similar manner to your wireframes
+
 
 ## Timeframes
 
-Tell us how long you anticipate spending on each area of development. Be sure to consider how many hours a day you plan to be coding and how many days you have available until presentation day.
-
-Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Throughout your project, keep track of your Time Invested and Actual Time and update your README regularly.
-
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
+| Setting up HTML boiler plate| H | 1hrs| --hrs | --hrs |
+| Adding API | H | 3hrs| --hrs | --hrs |
+| Adding Form for search bar | H | 3hrs| --hrs | --hrs |
+| Fetch data for individual crypto search | H | 3hrs| --hrs | --hrs |
+| Create click event for search bar | H | 3hrs| --hrs | --hrs |
+| Fetch data list for reference currency | H | 3hrs| --hrs | --hrs |
+| Create option list from reference currency list | H | 3hrs| --hrs | --hrs |
+| Link selected reference currency to indivudal crypto search function | H | 3hrs| --hrs | --hrs |
+| Append results to DOM | H | 3hrs| --hrs | --hrs |
+| Create remove function for past results | H | 3hrs| --hrs | --hrs |
+| Add icons | H | 3hrs| --hrs | --hrs |
+| Format text for MVP | H | 2hrs| --hrs | --hrs |
+| Flexbox & CSS for MVP | H | 3hrs| --hrs | --hrs |
+| Add media queries for MVP | H | 3hrs| --hrs | --hrs |
+| Adding 2nd API for multiple Crypto | H | 3hrs| --hrs | --hrs |
+| Fetch data for multiple cryptos | H | 3hrs| --hrs | --hrs |
+| Append multiple results to DOM | H | 3hrs| --hrs | --hrs |
+| Format text for API 2 | H | 3hrs| --hrs | --hrs |
+| Flexbox & CSS for API 2 | H | 3hrs| --hrs | --hrs |
+| Add media queries for multiple crypto | H | 3hrs| --hrs | --hrs |
+| Total | H | 57hrs| --hrs | --hrs |
 
 ## Code Snippet
 
