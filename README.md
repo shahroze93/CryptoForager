@@ -30,7 +30,8 @@ Below is the object data that returns additional detailed information the crypto
 [https://api.coingecko.com/api/v3/coins/bitcoin?market_data=true&community_data=true&developer_data=true]
 
 <details>
-```Json
+<summary>Click to expand!</summary>
+```json
 {
     "id": "bitcoin",
     "symbol": "btc",
@@ -4851,6 +4852,7 @@ Below is the object data that returns additional detailed information the crypto
     ]
 }
 ```
+	
 </details>
 
 Below is the object data for the reference currencies with reference currencies from the coingecko API.
