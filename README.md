@@ -6,7 +6,7 @@ The name of your project with deployed URL.
 
 ## Project Description
 
-An App for searching up pricing and other information on cryptocurrencies. The project will append prices, 24hr change in price, 24 trade volume, Market Cap and images of the cryptocurrency coins from the coinrank api that I will be using.
+An App for searching up pricing and other information on cryptocurrencies. The project will append prices, 24hr change in price, 24 trade volume, Market Cap and images of the cryptocurrency coins from the coingecko api that I will be using.
 
 ## API and Data Sample
 
@@ -4943,12 +4943,14 @@ https://imgur.com/NP3TRqV.jpg
 - Render data on page
 - retrieve dropdown list of reference currency
 - Allow user to choose reference currency & return crypto coin data in the selected reference currency
+- Add flexbox styling
+- Add mediaquery for mobile devices
 
 #### PostMVP  
 
-- Add second API from coinranking.com to retrieve data on multiple coins
+- Add the second API from coingecko to retrieve data on multiple coins
 - render the data on page
-- add mediaquery for mobile devices
+
 
 ## Project Schedule
 
@@ -4957,8 +4959,8 @@ https://imgur.com/NP3TRqV.jpg
 |June 21| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
 |June 22| Project Approval / Core Application Structure (HTML, CSS, etc.) | Incomplete
 |June 23| Pseudocode / actual code | Incomplete
-|June 24| Initial Clickable Model  | Incomplete
-|June 25| MVP | Incomplete
+|June 24| Initial Clickable Model / MVP | Incomplete
+|June 25| Advanced Styling | Incomplete
 |June 26| Post-MVP | Incomplete
 |June 28| Presentations | Incomplete
 
