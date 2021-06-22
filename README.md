@@ -4859,6 +4859,9 @@ Below is the object data for the reference currencies with reference currencies 
 
 [https://api.coingecko.com/api/v3/simple/supported_vs_currencies]
 
+<details>
+<summary>Click to expand</summary>
+
 ```Json
 [
     "btc",
@@ -4924,6 +4927,8 @@ Below is the object data for the reference currencies with reference currencies 
     "sats"
 ]
 ```
+
+</details>
 
 ## Wireframes
 
