@@ -25,7 +25,7 @@ The API I am using is from coingecko.com. One of the API's functionalities is a 
     }
 }
 ```
-Below is the object data that returns additional detailed information the crypto currency bitcoin from the coingecko API including images, descriptions and more.
+Below is the object data that returns additional detailed information of the crypto currency bitcoin from the coingecko API including images, descriptions and more.
 
 [https://api.coingecko.com/api/v3/coins/bitcoin?market_data=true&community_data=true&developer_data=true]
 
