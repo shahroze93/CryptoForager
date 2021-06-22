@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script defer src="./app.js"></script>
+  <link rel="stylesheet" href="./style.css">
+  <title>CryptoForager</title>
+</head>
+<body>
+  <h1>CRYPTOFORAGER</h1>
+
+  <h2>Search the Latest Crypto Prices & Details</h2>
+
+  <div>
+    <p class="steps">Enter the name of the crypto you wish to research</p>
+    <form id="crypto-form">
+      <input 
+        type="text" 
+        name="crypto" 
+        placeholder="Enter Crypto Name" 
+        id="crypto-search" 
+      />
+      <input 
+        type="submit" 
+        placeholder="Search Button" 
+        id="get-crypto-btn" 
+      />
+    </form>
+    <p class="steps">Optional: Select the reference currency or crypto for comparison <br> (Default: USD)</p>
+    <form class="form-currency">
+      <select id="select-currency">
+         <option>usd</option>
+      </select>
+    </form>
+  </div>
+
+  <div id="data-container"></div>
+
+  <p>Powered by CoinGecko</p>
+
+</body>
+</html>
