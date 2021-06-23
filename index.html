@@ -7,29 +7,41 @@
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script defer src="./app.js"></script>
   <link rel="stylesheet" href="./style.css">
-  <title>CryptoForager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Exo&display=swap" rel="stylesheet">
+  <title>CRYPTOFORAGER</title>
+<header>
+  <div id="logo">
+  CRYPTOFORAGER
+  </div>
+</header>
 </head>
-<body>
-  <h1>CRYPTOFORAGER</h1>
 
-  <h2>Search the Latest Crypto Prices & Details</h2>
+<body>
+  <div id="searchContainer">
+
+  <h2>SEARCH THE LATEST CRYPTOCURRENCY PRICES AND INFO</h2>
 
   <div>
     <p class="steps">Enter the name of the crypto you wish to research</p>
     <form id="crypto-form">
       <input 
         type="text" 
-        name="crypto" 
-        placeholder="Enter Crypto Name" 
+        name="crypto-search" 
+        placeholder="Enter Cryptocurrency Name" 
         id="crypto-search" 
       />
       <input 
         type="submit" 
         placeholder="Search Button" 
-        id="get-crypto-btn" 
+        id="get-crypto-btn"
       />
     </form>
-    <p class="steps">Optional: Select the reference currency or crypto for comparison <br> (Default: USD)</p>
+    <p class="notice">note: if search consists of two words, include "-" in between (ex: ethereum-classic)</p>
+    <br>
+    <p class="steps">Optional: Select the reference fiat currency or crypto for comparison <br> (Default: USD)</p>
     <form class="form-currency">
       <select id="select-currency">
          <option>usd</option>
@@ -37,9 +49,67 @@
     </form>
   </div>
 
-  <div id="data-container"></div>
+  <section id="indvCrypto">
+  <div id="image-container" class="indvImage"></div>
+  <div id="data-container" class="indvContainer"></div>
+  </section>
+</div>
 
+<section>
+  <button id="hideTable" onclick="hideTable()">Toggle - Price Change Over Time</button>
+
+<div id="desDiv">
+PRICE CHANGE OVER TIME
+<table class="cryptoTable">
+  <tr>
+    <th class="tableHeader">COINFORAGER</th>
+    <th>1hour</th>
+    <th>24hours</th>
+    <th>7days</th>
+    <th>14days</th>
+    <th>30days</th>
+    <th>1year</th>
+  </tr>
+  <tr>
+    <td id="tablePrice" class="tableTitle">Price </td>
+    <td class="onePrc"></td>
+    <td class="dayPrc"></td>
+    <td class="weekPrc"></td>
+    <td class="fortnightPrc"></td>
+    <td class="monthPrc"></td>
+    <td class="yearPrc"></td>
+  </tr>
+  <tr>
+    <td class="tableTitle">Change %</td>
+    <td class="oneChn">--</td>
+    <td class="dayChn"></td>
+    <td class="weekChn"></td>
+    <td class="fortnightChn"></td>
+    <td class="monthChn"></td>
+    <td class="yearChn"></td>
+  </tr>
+  </table>
+</div>
   <p>Powered by CoinGecko</p>
+</section>
 
-</body>
+  <h2 class="overviewHeader">CRYPTOCURRENCY PRICES BY MARKET CAP</h2>
+<div id="coinArray">
+</form>
+<p class="steps">Optional: Select the reference fiat currency or crypto<br> (Default: USD)</p>
+<form class="array-form">
+  <select id="select-currency2">
+     <option>usd</option>
+  </select>
+  <button id="update-list-btn">Update List</button>
+</form>
+  <section class="coin-list">
+  </div>
+
+  </body>
+  <footer>
+    <p>Powered by CoinGecko <br>
+      © CRYPTOFORAGER - Shahroze Husain 2021
+    </p>
+  </footer>
 </html>
