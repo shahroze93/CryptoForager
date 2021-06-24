@@ -77,7 +77,7 @@ function showCrypto(data, info) {
   <p>24Hr Low: ${[fiat]} ${cryLow}</p>
   <p>24Hr High: ${[fiat]} ${cryHigh}</p>
   <p>24Hr Price Change: ${cryChange}%</p>
-  <p>24Hr Trade Volume: ${cryTrade}</p>
+  <p>24Hr Trade Vol: ${cryTrade}</p>
   <p>Market Cap: ${cryCap}</p>
   <p>Circulating Supply: ${cryCir}<p>
   `
@@ -255,7 +255,7 @@ function showCoinData(coinsArray) {
     sectionDiv.append(coinImg)
 
     const coinSymbol = document.createElement('p')
-    coinSymbol.classList.add("coinSymbal")
+    coinSymbol.classList.add("coinSymbol")
     coinSymbol.textContent = `Symbol: ${sym}`
     sectionDiv.append(coinSymbol)
      
@@ -268,7 +268,7 @@ function showCoinData(coinsArray) {
     const coinPrice = document.createElement('h3')
     coinPrice.classList.add("coinPrice")
     const deciPrice = decimal(coinsArray[i].market_data.current_price[curr])
-    coinPrice.textContent = `Price: ${fiat} ${deciPrice}` //need to add a fucntion where the currency changes like for the search option
+    coinPrice.textContent = `Price: ${fiat} ${deciPrice}` //need to add a function where the currency changes like for the search option
     // console.log(deciPrice)
      sectionDiv.append(coinPrice)
      
@@ -281,20 +281,20 @@ function showCoinData(coinsArray) {
     
     const coinCap = document.createElement('p')
     coinCap.classList.add("coinCap")
-    const deciCap = decimal2((coinsArray[i].market_data.market_cap[curr])/1000000000) + ` Billion ${fiat}`
+    const deciCap = decimal2((coinsArray[i].market_data.market_cap[curr])/1000000000) + ` Bil ${fiat}`
     coinCap.textContent = `Market Cap: ${deciCap}`
     // console.log(deciCap)
     sectionDiv.append(coinCap) 
      
     const coinSupply = document.createElement('p')
     coinSupply.classList.add("coinSupply")
-    const deciSupply = decimal2((coinsArray[i].market_data.circulating_supply)/1000000000) + ` Billion ${sym}`
+    const deciSupply = decimal2((coinsArray[i].market_data.circulating_supply)/1000000000) + ` Bil ${sym}`
     coinSupply.textContent = `Cir Supply: ${deciSupply}`
     // console.log(deciSupply)
     sectionDiv.append(coinSupply)
      
 
-    
+
   }
 }
 
@@ -308,7 +308,7 @@ form2.addEventListener('click', (e) => {
 })
 
 // hide and display function assistance taken from https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
-function hideTable() {
+function hideShow() {
   var x = document.getElementById("desDiv");
   if (x.style.display === "none") {
     x.style.display = "block";

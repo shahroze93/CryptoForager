@@ -11,17 +11,38 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Exo&display=swap" rel="stylesheet">
     <title>CRYPTOFORAGER</title>
-<header>
-  <div id="logo">
-  CRYPTOFORAGER
-  <a class="fab fa-linkedin" href="https://www.linkedin.com/in/shahrozehusain" target="_blank"><span>Linkedin</span></a>
-  <a class="fab fa-github" href="https://github.com/shahroze93" target="_blank"><span>Github</span></a>
-  <a class="fas fa-coins" alt="CoinGeckoAPI" href="https://www.coingecko.com/en/api#explore-api" target="_blank"><span>CoinGeckoAPI</span></a>
-</div>
-</header>
 </head>
 
 <body>
+  <!-- <header>
+    
+    <ul id="icons">
+    <li><a class="fab fa-linkedin" href="https://www.linkedin.com/in/shahrozehusain" target="_blank"><span>Linkedin</span></a></li>
+    <li><a class="fab fa-github" href="https://github.com/shahroze93" target="_blank"><span>Github</span></a></li>
+    <li><a class="fas fa-coins" alt="CoinGeckoAPI" href="https://www.coingecko.com/en/api#explore-api" target="_blank"><span>CoinGeckoAPI</span></a></li>
+    </ul>
+  </header> -->
+  <nav class="nav">
+    <!-- <input type="checkbox" id="nav_checkbox" class="nav__checkbox"
+    <label for="nav_checkbox" class="nav">
+    <i class="fa fa-bars"></i>
+    <i class="fas fa-times"></i>
+  </label> -->
+    <input id="nav-toggle" type="checkbox">
+    <div class="logo=">CRYPTOFORAGER</div>
+    <ul class="links"" id="icons">
+    <li><a class="fab fa-linkedin" href="https://www.linkedin.com/in/shahrozehusain" target="_blank"><span>Linkedin</span></a></li>
+    <li><a class="fab fa-github" href="https://github.com/shahroze93" target="_blank"><span>Github</span></a></li>
+    <li><a class="fas fa-coins" alt="CoinGeckoAPI" href="https://www.coingecko.com/en/api#explore-api" target="_blank"><span>CoinGeckoAPI</span></a></li>
+    </ul>
+    <label for="nav-toggle" class-"icon-burger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </label>
+  </nav>
+
+  
   <div id="searchContainer">
   <h2>SEARCH THE LATEST CRYPTOCURRENCY PRICES AND INFO</h2>
 
@@ -57,7 +78,7 @@
 </div>
 
 <section id="timeSec">
-  <button id="hideTable" onclick="hideTable()">Hide/Show - Price Change Over Time</button>
+  <button id="hideTable" onclick="hideShow()">Hide/Show - Price Change Over Time</button>
 <div id="desDiv">
 PRICE CHANGE PERCENTAGE OVER TIME
 <table class="cryptoTable">

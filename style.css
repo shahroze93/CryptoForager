@@ -1,0 +1,571 @@
+* {
+  margin: 0; 
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Exo', sans-serif;
+}
+
+/* header {
+  background-color: #1434A4;
+  height: 50px;
+  /* display: block-inline; */
+  /* width: 100% */
+
+
+nav {
+  z-index: 10;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding: 0 5%;
+  height: 100px;
+  background-color: #1434A4;
+}
+
+nav.logo{
+  float: left;
+  width: 40%;
+  height: 100; 
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  color: white
+}
+
+nav.links {
+  float: right;
+  padding: 0;
+  margin: 0;
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav.links li{
+  list-style-type: none;
+}
+
+nav.links a {
+  display: block;
+  padding: 1em;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+nav.
+
+/* a {
+  float: right;
+  color: black;
+  font-size: large;
+  margin-left: 2%;
+} */
+
+/* a:hover{
+  color: #ebcb5b;
+  font-size: large;
+} */
+
+footer {
+  background-color: #1434A4;
+  height: 40px;
+  color: white;
+  text-align: center;
+}
+
+/* #icons {
+  font-size: 20px;
+  padding: 1.5%;
+  color: white;
+} */
+
+header h1{
+  color: white;
+  font-size: 25px;
+  margin-top: .7%;
+  margin-left: 1%;
+}
+
+#searchContainer {
+  padding: 10px 5px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+#timeSec {
+  text-align: center;
+}
+
+
+#coinArray {
+  text-align: center;
+}
+
+/* learnt from https://www.w3schools.com/css/tryit.asp?filename=trycss_display */
+#hideTable {
+  visibility: hidden;
+}
+
+#desDiv {
+  display: none;
+  text-align: center;
+}
+
+.coin-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.coinImg {
+  border: 2px solid #ebcb5b;
+  border-radius: 4px;
+  height: 100px;
+  width: 100px;
+}
+
+.sectionDiv {
+  border: 4px solid #0047AB;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 5px;
+  width: 180px; 
+}
+
+.sectionDiv:hover {
+  border: 4px solid orange;
+  border-radius: 4px;
+}
+
+.tableTitle {
+  color: #0047AB;
+}
+
+.tableHeader {
+  color: orange
+}
+
+form {
+  margin: 10px;
+}
+
+
+
+#indvCrypto {
+  display: flex;
+  flex-direction: row;
+  border: 2px solid #0047AB;
+  border-radius: 4px;
+  /* visibility: hidden; */
+  align-items: center;
+  justify-content: center;
+  margin: 0 15%;
+}
+
+#data-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* flex-wrap: wrap; */
+  margin-right: 2%;
+}
+
+#image-container {
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 1%;
+  margin-bottom:1%;
+}
+
+.searchImg {
+  height: 150px;
+  width: auto;
+}
+
+#crypto-search {
+  width: 30%;
+  height: 3%;
+  padding:10px ;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #ebcb5b;
+  border-radius: 4px;
+  text-align: center;
+  font-size: large;
+}
+
+#select-currency {
+  width: 15%;
+  padding: 8px;
+  border: 2px solid #ebcb5b;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+  font-size: 15px;
+}
+
+#select-currency2 {
+  width: 15%;
+  padding: 8px;
+  border: 2px solid #ebcb5b;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+  font-size: 15px;
+}
+
+#get-crypto-btn {
+  background-color: #0047AB; 
+  border: none;
+  color: white;
+  padding: 14px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+#update-list-btn {
+  background-color: #0047AB; 
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+#get-crypto-btn:hover {
+  background-color: #1434A4; 
+  border: none;
+  color: #ebcb5b;
+  padding: 14px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+#update-list-btn:hover {
+  background-color: #1434A4; 
+  border: none;
+  color: #ebcb5b;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+#hideTable {
+  margin-bottom: 10px;
+  background-color: #0047AB; 
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+#hideTable:hover {
+  background-color: #1434A4; 
+  border: none;
+  color: #ebcb5b;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+
+h2 {
+  color: #1434A4;
+  margin: 5px 0px;
+}
+
+.searchPrice{
+  color: #0047AB;
+}
+.searchName{
+  color: #0047AB;
+}
+
+.coinSymbol {
+  color: #ffb854
+}
+
+.searchImg{
+  border: 2px solid #ebcb5b;
+}
+
+.coinPrice {
+  color: #0047AB;
+  font-size: 110%;
+}
+
+.cryptoTable {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+}
+
+.cryptoTable td{
+  width: 75px;
+}
+
+.coinSymbol {
+  color: #ffb854
+}
+
+.searchImg{
+  border: 2px solid #ebcb5b;
+}
+
+.coinPrice {
+  color: #0047AB;
+  font-size: medium;
+}
+
+.notice {
+  font-size: 12px;
+}
+
+.cryptoTable {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.cryptoTable td{
+  width: 75px;
+}
+
+#coinArray p {
+  font-size: small;
+}
+
+/* Mobile Query Section */
+@media all and (max-width: 600px) {
+  #indvCrypto {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #0047AB;
+    border-radius: 4px;
+    /* visibility: hidden; */
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px;
+    margin-right: 5px;
+  } 
+ 
+  span {
+    font-size: 5px;
+  }
+
+  header h1 {
+    margin-top: 2%;
+  }
+
+  #icons {
+    padding: 3%;
+  }
+
+  .timeSec {
+    text-align:center;
+  }
+
+  #desDiv {
+    margin: 0 15%;
+    width: 80%
+    font-size: smaller;
+  }
+
+  table.cryptoTable {
+    margin: 0 10%;
+    font-size: smaller;
+  }
+  
+button#hideTable {
+  display:none
+}
+
+  .searchImg {
+    width: 50px;
+    height: auto;
+  }
+  
+  .coinPerChange {
+    display: none;
+  }
+
+  .coinSymbol {
+    display: none;
+  }
+
+  .sectionDiv {
+    border: 4px solid #0047AB;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 150px;
+    /* height: 270px; */
+  }
+
+  .coinImg {
+    border: 2px solid #ebcb5b;
+    border-radius: 4px;
+    height: 50px;
+    width: 50px;
+  }
+
+  .coin-list {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+
+h3 {
+ font-size: medium;
+}
+
+
+h2 {
+  font-size: medium;
+}
+
+.coinPrice {
+  font-size: small;
+}
+
+p {
+  font-size: smaller;
+  font-weight: 200;
+}
+
+#crypto-search {
+  width: 70%;
+  height: 2%;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #ebcb5b;
+  border-radius: 4px;
+  text-align: center;
+  font-size: small;
+}
+
+#select-currency {
+  width: 25%;
+  padding: 4px;
+  border: 2px solid #ebcb5b;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+  font-size: small;
+}
+
+#select-currency2 {
+  width: 25%;
+  padding: 4px;
+  border: 2px solid #ebcb5b;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+  font-size: small;
+}
+
+#get-crypto-btn {
+  background-color: #0047AB; 
+  border: none;
+  color: white;
+  padding: 12px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: small;
+  border-radius: 4px;
+}
+
+#update-list-btn {
+  background-color: #0047AB; 
+  border: none;
+  color: white;
+  padding: 6px 13px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: small;
+  border-radius: 4px;
+}
+
+#get-crypto-btn:hover {
+  background-color: #1434A4; 
+  border: none;
+  color: #ebcb5b;
+  padding: 12px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: small;
+  border-radius: 4px;
+}
+
+#update-list-btn:hover {
+  background-color: #1434A4; 
+  border: none;
+  color: #ebcb5b;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+#hideTable {
+  margin-bottom: 10px;
+  background-color: #0047AB; 
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+#hideTable:hover {
+  background-color: #1434A4; 
+  border: none;
+  color: #ebcb5b;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+th.tableHeader {
+  visibility: hidden;
+}
+}
