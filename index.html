@@ -6,22 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script defer src="./app.js"></script>
+  <script src="https://kit.fontawesome.com/083a6f2e1c.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Exo&display=swap" rel="stylesheet">
-  <title>CRYPTOFORAGER</title>
+    <title>CRYPTOFORAGER</title>
 <header>
   <div id="logo">
   CRYPTOFORAGER
-  </div>
+  <a class="fab fa-linkedin" href="https://www.linkedin.com/in/shahrozehusain" target="_blank"><span>Linkedin</span></a>
+  <a class="fab fa-github" href="https://github.com/shahroze93" target="_blank"><span>Github</span></a>
+  <a class="fas fa-coins" alt="CoinGeckoAPI" href="https://www.coingecko.com/en/api#explore-api" target="_blank"><span>CoinGeckoAPI</span></a>
+</div>
 </header>
 </head>
 
 <body>
   <div id="searchContainer">
-
   <h2>SEARCH THE LATEST CRYPTOCURRENCY PRICES AND INFO</h2>
 
   <div>
@@ -41,25 +42,24 @@
     </form>
     <p class="notice">note: if search consists of two words, include "-" in between (ex: ethereum-classic)</p>
     <br>
-    <p class="steps">Optional: Select the reference fiat currency or crypto for comparison <br> (Default: USD)</p>
+    <p class="steps">Optional: Select the reference fiat currency or crypto for comparison (Default: USD)</p>
     <form class="form-currency">
       <select id="select-currency">
          <option>usd</option>
       </select>
     </form>
   </div>
-
+  <p>Powered by CoinGecko</p>
   <section id="indvCrypto">
   <div id="image-container" class="indvImage"></div>
   <div id="data-container" class="indvContainer"></div>
   </section>
 </div>
 
-<section>
-  <button id="hideTable" onclick="hideTable()">Toggle - Price Change Over Time</button>
-
+<section id="timeSec">
+  <button id="hideTable" onclick="hideTable()">Hide/Show - Price Change Over Time</button>
 <div id="desDiv">
-PRICE CHANGE OVER TIME
+PRICE CHANGE PERCENTAGE OVER TIME
 <table class="cryptoTable">
   <tr>
     <th class="tableHeader">COINFORAGER</th>
@@ -70,33 +70,19 @@ PRICE CHANGE OVER TIME
     <th>30days</th>
     <th>1year</th>
   </tr>
-  <tr>
-    <td id="tablePrice" class="tableTitle">Price </td>
-    <td class="onePrc"></td>
-    <td class="dayPrc"></td>
-    <td class="weekPrc"></td>
-    <td class="fortnightPrc"></td>
-    <td class="monthPrc"></td>
-    <td class="yearPrc"></td>
+  <tr id="rowPrice">     
   </tr>
-  <tr>
-    <td class="tableTitle">Change %</td>
-    <td class="oneChn">--</td>
-    <td class="dayChn"></td>
-    <td class="weekChn"></td>
-    <td class="fortnightChn"></td>
-    <td class="monthChn"></td>
-    <td class="yearChn"></td>
+  <tr id="rowChange">
   </tr>
   </table>
 </div>
-  <p>Powered by CoinGecko</p>
 </section>
 
-  <h2 class="overviewHeader">CRYPTOCURRENCY PRICES BY MARKET CAP</h2>
+  
 <div id="coinArray">
+  <h2 class="overviewHeader">CRYPTOCURRENCY PRICES BY MARKET CAP</h2>
 </form>
-<p class="steps">Optional: Select the reference fiat currency or crypto<br> (Default: USD)</p>
+<p class="steps">Optional: Select the reference fiat currency or crypto (Default: USD)</p>
 <form class="array-form">
   <select id="select-currency2">
      <option>usd</option>

@@ -67,7 +67,7 @@ function showCrypto(data, info) {
   const cryHigh = decimal2(info.market_data.high_24h[curr])
   const cryMax = decimal(info.market_data.total_supply)
 
-    let cryptoImage = `
+  let cryptoImage = `
   <h3 class="searchName">${info.name} (${crySym})</h3>
   <img class="searchImg" src=" ${info.image.large}"></img>
   <p>Rank By Mkt Cap: ${info.market_cap_rank}<p>
@@ -84,61 +84,61 @@ function showCrypto(data, info) {
   imageContainer.insertAdjacentHTML('afterbegin', cryptoImage)
   dataContainer.insertAdjacentHTML('beforeend', cryptoData)
   cryptoTable(info, curr, fiat)
-
+  document.getElementById("desDiv").style.display = "block";
+  document.getElementById("hideTable").style.visibility = "visible";
+  document.getElementById("indvCrypto").style.visibility = "visible";
   return cryptoData
 }
 
-// Post-MVP new addpm project to show addtional price changes by hour, day, month, and year
+// Post-MVP new section/table to show addtional price changes by hour, day, month, and year + button to toggle on and off
+const rowPrice = document.querySelector('#rowPrice')
+
 function cryptoTable(info, curr, fiat) {
-  const dayChn = decimal2(info.market_data.market_cap_change_percentage_24h)
-  // console.log(dayChn)
-  const weekChn = decimal2(info.market_data.price_change_percentage_7d)
-  const fortnightChn = decimal2(info.market_data.price_change_percentage_14d)
-  const monthChn = decimal2(info.market_data.price_change_percentage_30d)
-  const yearChn = decimal2(info.market_data.price_change_percentage_1y)
-  
-  const onePrc = decimal2(info.market_data.price_change_percentage_7d_in_currency[curr])
-  // console.log(onePrc)
+  const onePrc = decimal2(info.market_data.price_change_percentage_1h_in_currency[curr])
   const dayPrc = decimal2(info.market_data.market_cap_change_percentage_24h_in_currency[curr])
+  console.log(dayPrc)
   const weekPrc = decimal2(info.market_data.price_change_percentage_7d_in_currency[curr])
+  console.log(weekPrc)
   const fortnightPrc = decimal2(info.market_data.price_change_percentage_14d_in_currency[curr])
   const monthPrc = decimal2(info.market_data.price_change_percentage_30d_in_currency[curr])
   const yearPrc = decimal2(info.market_data.price_change_percentage_1y_in_currency[curr])
 
-  const displayPriceTitle = document.querySelector('#tablePrice')
-  displayPriceTitle.append([fiat])
-  const displayOnePrc = document.querySelector('.onePrc')
-  displayOnePrc.append(onePrc)
-  const displayDayPrc = document.querySelector('.dayPrc')
-  displayDayPrc.append(dayPrc)
-  const displayWeekPrc = document.querySelector('.weekPrc')
-  displayWeekPrc.append(weekPrc)
-  const displayFortnightPrc = document.querySelector('.fortnightPrc')
-  displayFortnightPrc.append(fortnightPrc)
-  const displayMonthPrc = document.querySelector('.monthPrc')
-  displayMonthPrc.append(monthPrc)
-  const displayYearPrc = document.querySelector('.yearPrc')
-  displayYearPrc.append(yearPrc)
-
-  const displayDayChn = document.querySelector('.dayChn')
-  displayDayChn.append(dayChn)
-  const displayWeekChn = document.querySelector('.weekChn')
-  displayWeekChn.append(weekChn)
-  const displayFortnightChn = document.querySelector('.fortnightChn')
-  displayFortnightChn.append(fortnightChn)
-  const displayMonthChn = document.querySelector('.monthChn')
-  displayMonthChn.append(monthChn)
-  const displayYearChn = document.querySelector('.yearChn')
-  displayYearChn.append(yearChn)
+  const displayPriceTitle = document.createElement('td')
+  displayPriceTitle.classList.add("tablePrice")
+  displayPriceTitle.textContent = `Price Change % in ${[fiat]}`
+  rowPrice.append(displayPriceTitle)
+  const displayOnePrc = document.createElement('td')
+  displayOnePrc.classList.add("timePrice")
+  displayOnePrc.textContent = onePrc
+  rowPrice.append(displayOnePrc)
+  const displayDayPrc = document.createElement('td')
+  displayDayPrc.classList.add("#timePrice")
+  displayDayPrc.textContent = (dayPrc)
+  rowPrice.append(displayDayPrc)
+  const displayWeekPrc = document.createElement('td')
+  displayWeekPrc.classList.add("#timePrice")
+  displayWeekPrc.textContent = (weekPrc)
+  rowPrice.append(displayWeekPrc)
+  const displayFortPrc = document.createElement('td')
+  displayFortPrc.classList.add("#timePrice")
+  displayFortPrc.textContent = (fortnightPrc)
+  rowPrice.append(displayFortPrc)
+  const displayMonthPrc = document.createElement('td')
+  displayMonthPrc.classList.add("#timePrice")
+  displayMonthPrc.textContent = (monthPrc)
+  rowPrice.append(displayMonthPrc)
+  const displayYearPrc = document.createElement('td')
+  displayYearPrc.classList.add("#timePrice")
+  displayYearPrc.textContent = (yearPrc)
+  rowPrice.append(displayYearPrc)
 }
-
 
 // Adding Form for search bar & create click event for search bar
 const form = document.querySelector('#crypto-form')
 
 form.addEventListener('submit', (e) => {
   e.preventDefault()
-  const inputValue = document.querySelector('#crypto-search').value
+  const inputValue = document.querySelector('#crypto-search').value.replace(" ", "-")
   const inputLow = inputValue.toLowerCase() // ADDED THIS IN BECAUSE API IS CASE SENSITIVE AND ONLY RECOGNIZES LOWER CASE
   console.log(inputLow)
   const selectCurr = selectTag.value
@@ -147,6 +147,8 @@ form.addEventListener('submit', (e) => {
   document.querySelector('#crypto-search').value = ''
   removeContent(imageContainer)
   removeContent(dataContainer)
+  removeContent(rowPrice)
+  removeContent(rowChange)
 })
 
 // ////////////////////////////////////////////////////////////////////////////////////
@@ -289,8 +291,10 @@ function showCoinData(coinsArray) {
     const deciSupply = decimal2((coinsArray[i].market_data.circulating_supply)/1000000000) + ` Billion ${sym}`
     coinSupply.textContent = `Cir Supply: ${deciSupply}`
     // console.log(deciSupply)
-    sectionDiv.append(coinSupply) 
+    sectionDiv.append(coinSupply)
+     
 
+    
   }
 }
 
