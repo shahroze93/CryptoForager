@@ -5,6 +5,10 @@
   font-family: 'Exo', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   text-align: center;
 }
@@ -80,6 +84,7 @@ footer {
   height: 40px;
   color: white;
   text-align: center;
+  margin-top: 5px;
 }
 
 #searchContainer {
@@ -208,18 +213,6 @@ form {
   border-radius: 4px;
 }
 
-#update-list-btn {
-  background-color: #0047AB; 
-  border: none;
-  color: white;
-  padding: 12px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 12px;
-  border-radius: 4px;
-}
-
 #get-crypto-btn:hover {
   background-color: #1434A4; 
   border: none;
@@ -229,6 +222,44 @@ form {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  border-radius: 4px;
+}
+
+#update-data-btn {
+  background-color: #0047AB; 
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  border-radius: 4px;
+  visibility:hidden;
+  }
+
+#update-data-btn:hover {
+  background-color: #1434A4; 
+  border: none;
+  color: #ebcb5b;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  border-radius: 4px;
+  }
+
+
+#update-list-btn {
+  background-color: #0047AB; 
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
   border-radius: 4px;
 }
 
@@ -313,6 +344,7 @@ h2 {
 
 .notice {
   font-size: 12px;
+  margin-top: 5px;
 }
 
 #coinArray p {
@@ -326,6 +358,11 @@ h2 {
 #return:hover {
  font-weight: 500;
  color: orange;
+}
+
+#cryID {
+  visibility: hidden;
+  font-size: 1px;
 }
 
 /* Mobile Query Section */
@@ -360,7 +397,7 @@ h2 {
   }
 
 nav :checked ~ .links {
-  bottom: 50%;
+  bottom: 30%;
 } 
   #indvCrypto {
     display: flex;
@@ -378,7 +415,7 @@ nav :checked ~ .links {
   }
 
   table.cryptoTable {
-    margin: 0 10%;
+    margin: 0 5%;
     font-size: smaller;
   }
   
@@ -482,6 +519,31 @@ p {
   font-size: small;
   border-radius: 4px;
 }
+
+#update-data-btn {
+  background-color: #0047AB; 
+  border: none;
+  color: white;
+  padding: 8px 13px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: small;
+  border-radius: 4px;
+  visibility:hidden;
+  }
+
+#update-data-btn:hover {
+  background-color: #1434A4; 
+  border: none;
+  color: #ebcb5b;
+  padding: 8px 13px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: small;
+  border-radius: 4px;
+  }
 
 #update-list-btn {
   background-color: #0047AB; 

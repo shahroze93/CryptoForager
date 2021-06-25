@@ -19,7 +19,6 @@
     <input id="nav-toggle" type="checkbox">
     <div class="logo">CRYPTOFORAGER</div>
     <ul class="links">
-    <!-- <li><a href="#home">Home</a></li> -->
     <li><a class="fab fa-linkedin" href="https://www.linkedin.com/in/shahrozehusain" target="_blank"><span>Linkedin</span></a></li>
     <li><a class="fab fa-github" href="https://github.com/shahroze93" target="_blank"><span>Github</span></a></li>
     <li><a class="fas fa-coins" href="https://www.coingecko.com/en/api#explore-api" target="_blank"><span>CoinGeckoAPI</span></a></li>
@@ -49,13 +48,12 @@
         id="get-crypto-btn"
       />
     </form>
-    <p class="notice">note: if search consists of two words, include "-" in between (ex: ethereum-classic)</p>
-    <br>
     <p class="steps">Optional: Select the reference fiat currency or crypto for comparison (Default: USD)</p>
     <form class="form-currency">
       <select id="select-currency">
          <option>usd</option>
       </select>
+      <button id="update-data-btn">Update Search</button>
     </form>
   </div>
   <p>Powered by CoinGecko</p>
@@ -81,8 +79,6 @@ PRICE CHANGE PERCENTAGE OVER TIME
   </tr>
   <tr id="rowPrice">     
   </tr>
-  <tr id="rowChange">
-  </tr>
   </table>
 </div>
 </section>
@@ -97,12 +93,12 @@ PRICE CHANGE PERCENTAGE OVER TIME
      <option>usd</option>
   </select>
   <button id="update-list-btn">Update List</button>
+<p class="notice">note: click cryptocurrency to return additional data</p>
 </form>
   <section class="coin-list">
-  </div>
-
+  </div>  
    <a id="return" href="#top">RETURN TO TOP</a>
-  </body>
+</body>
   <footer>
     <p>Powered by CoinGecko <br>
       © CRYPTOFORAGER - Shahroze Husain 2021
