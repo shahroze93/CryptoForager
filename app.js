@@ -76,7 +76,7 @@ function showCrypto(data, info) {
   <p class="searchPrice">Price: ${cryPrice}</p>
   <p>24Hr Low: ${[fiat]} ${cryLow}</p>
   <p>24Hr High: ${[fiat]} ${cryHigh}</p>
-  <p>24Hr Price Change: ${cryChange}%</p>
+  <p id=perChange>24Hr Price Change: ${cryChange}%</p>
   <p>24Hr Trade Vol: ${cryTrade}</p>
   <p>Market Cap: ${cryCap}</p>
   <p>Circulating Supply: ${cryCir}<p>
@@ -112,23 +112,23 @@ function cryptoTable(info, curr, fiat) {
   displayOnePrc.textContent = onePrc
   rowPrice.append(displayOnePrc)
   const displayDayPrc = document.createElement('td')
-  displayDayPrc.classList.add("#timePrice")
+  displayDayPrc.classList.add("timePrice")
   displayDayPrc.textContent = (dayPrc)
   rowPrice.append(displayDayPrc)
   const displayWeekPrc = document.createElement('td')
-  displayWeekPrc.classList.add("#timePrice")
+  displayWeekPrc.classList.add("timePrice")
   displayWeekPrc.textContent = (weekPrc)
   rowPrice.append(displayWeekPrc)
   const displayFortPrc = document.createElement('td')
-  displayFortPrc.classList.add("#timePrice")
+  displayFortPrc.classList.add("timePrice")
   displayFortPrc.textContent = (fortnightPrc)
   rowPrice.append(displayFortPrc)
   const displayMonthPrc = document.createElement('td')
-  displayMonthPrc.classList.add("#timePrice")
+  displayMonthPrc.classList.add("timePrice")
   displayMonthPrc.textContent = (monthPrc)
   rowPrice.append(displayMonthPrc)
   const displayYearPrc = document.createElement('td')
-  displayYearPrc.classList.add("#timePrice")
+  displayYearPrc.classList.add("timePrice")
   displayYearPrc.textContent = (yearPrc)
   rowPrice.append(displayYearPrc)
 }
@@ -157,11 +157,11 @@ form.addEventListener('submit', (e) => {
 
 // // Create option list from reference currency list
 const selectTag = document.querySelector('#select-currency')
-console.log(selectTag)
+// console.log(selectTag)
 const selectTag2 = document.querySelector('#select-currency2')
-console.log(selectTag2)
+// console.log(selectTag2)
 const formCurr = document.querySelector('.form-currency') 
-console.log(formCurr)
+// console.log(formCurr)
 
 // Fetch data list for reference currency
 const getCurrList = async () => {
@@ -273,7 +273,7 @@ function showCoinData(coinsArray) {
      sectionDiv.append(coinPrice)
      
     const coinPerChange = document.createElement('p')
-    coinPerChange.classList.add("coinPerChange")
+    coinPerChange.classList.add("timePrice")
     const deciPerChange = decimal2(coinsArray[i].market_data.price_change_percentage_24h) + "%"
     coinPerChange.textContent = `24hr Change: ${deciPerChange}`
     // console.log(deciSupply)

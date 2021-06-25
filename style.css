@@ -5,49 +5,45 @@
   font-family: 'Exo', sans-serif;
 }
 
-/* header {
-  background-color: #1434A4;
-  height: 50px;
-  /* display: block-inline; */
-  /* width: 100% */
-
+body {
+  text-align: center;
+}
 
 nav {
-  z-index: 10;
   left: 0;
   right: 0;
   top: 0;
-  padding: 0 5%;
-  height: 100px;
+  padding: 0 3%;
+  height: 80px;
   background-color: #1434A4;
 }
 
-nav.logo{
+nav .logo {
   float: left;
   width: 40%;
-  height: 100; 
+  height: 100%; 
   display: flex;
   align-items: center;
   font-size: 24px;
   color: white
 }
 
-nav.links {
+nav .links {
   float: right;
   padding: 0;
   margin: 0;
-  width: 60%;
+  width: 40%;
   height: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-nav.links li{
-  list-style-type: none;
+nav .links li {
+  list-style: none;
 }
 
-nav.links a {
+nav .links a {
   display: block;
   padding: 1em;
   font-size: 16px;
@@ -56,38 +52,34 @@ nav.links a {
   text-decoration: none;
 }
 
-nav.
+#nav-toggle {
+  position: absolute;
+  top: -100px;
+}
 
-/* a {
+nav .icon-burger {
+  display: none;
   float: right;
-  color: black;
-  font-size: large;
-  margin-left: 2%;
-} */
+}
 
-/* a:hover{
+nav .icon-burger .line {
+  width: 30px;
+  height: 5px;
+  background-color: white;
+  margin: 5px;
+  border-radius: 3px;
+  transition: all .3s ease-in-out;
+}
+
+nav .links a:hover {
   color: #ebcb5b;
-  font-size: large;
-} */
+}
 
 footer {
   background-color: #1434A4;
   height: 40px;
   color: white;
   text-align: center;
-}
-
-/* #icons {
-  font-size: 20px;
-  padding: 1.5%;
-  color: white;
-} */
-
-header h1{
-  color: white;
-  font-size: 25px;
-  margin-top: .7%;
-  margin-left: 1%;
 }
 
 #searchContainer {
@@ -158,14 +150,11 @@ form {
   margin: 10px;
 }
 
-
-
 #indvCrypto {
   display: flex;
   flex-direction: row;
   border: 2px solid #0047AB;
   border-radius: 4px;
-  /* visibility: hidden; */
   align-items: center;
   justify-content: center;
   margin: 0 15%;
@@ -176,7 +165,6 @@ form {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* flex-wrap: wrap; */
   margin-right: 2%;
 }
 
@@ -187,13 +175,8 @@ form {
   margin-bottom:1%;
 }
 
-.searchImg {
-  height: 150px;
-  width: auto;
-}
-
 #crypto-search {
-  width: 30%;
+  width: 50%;
   height: 3%;
   padding:10px ;
   margin: 8px 0;
@@ -204,16 +187,7 @@ form {
   font-size: large;
 }
 
-#select-currency {
-  width: 15%;
-  padding: 8px;
-  border: 2px solid #ebcb5b;
-  border-radius: 4px;
-  background-color: #f1f1f1;
-  font-size: 15px;
-}
-
-#select-currency2 {
+#select-currency, #select-currency2 {
   width: 15%;
   padding: 8px;
   border: 2px solid #ebcb5b;
@@ -313,19 +287,15 @@ h2 {
 }
 
 .searchImg{
+  height: 150px;
+  width: auto;
   border: 2px solid #ebcb5b;
-}
-
-.coinPrice {
-  color: #0047AB;
-  font-size: 110%;
 }
 
 .cryptoTable {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-
 }
 
 .cryptoTable td{
@@ -334,10 +304,6 @@ h2 {
 
 .coinSymbol {
   color: #ffb854
-}
-
-.searchImg{
-  border: 2px solid #ebcb5b;
 }
 
 .coinPrice {
@@ -349,53 +315,65 @@ h2 {
   font-size: 12px;
 }
 
-.cryptoTable {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-
-.cryptoTable td{
-  width: 75px;
-}
-
 #coinArray p {
   font-size: small;
 }
 
+#return {
+  color: #1434A4;
+}
+
+#return:hover {
+ font-weight: 500;
+ color: orange;
+}
+
 /* Mobile Query Section */
-@media all and (max-width: 600px) {
+@media screen and (max-width: 600px) {
+  nav .logo {
+    float: none;
+    width: auto;
+    justify-content: center;
+    font-size: 30px;
+  }
+  nav .links {
+    float: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 80px;
+    bottom: 100%;
+    width: auto;
+    height: auto;
+    flex-direction: column;
+    background-color: rgba(0,0,0, 0.8);
+    overflow: hidden;
+    transition: all .6s ease-in-out;
+  }
+  nav .links a {
+    font-size: 30px;     
+  }
+
+  nav .icon-burger {
+    display: block;
+    margin-top: -60px;
+  }
+
+nav :checked ~ .links {
+  bottom: 50%;
+} 
   #indvCrypto {
     display: flex;
     flex-direction: column;
     border: 2px solid #0047AB;
     border-radius: 4px;
-    /* visibility: hidden; */
     align-items: center;
     justify-content: center;
     margin-left: 5px;
     margin-right: 5px;
   } 
  
-  span {
-    font-size: 5px;
-  }
-
-  header h1 {
-    margin-top: 2%;
-  }
-
-  #icons {
-    padding: 3%;
-  }
-
-  .timeSec {
-    text-align:center;
-  }
-
   #desDiv {
-    margin: 0 15%;
-    width: 80%
     font-size: smaller;
   }
 
@@ -405,9 +383,8 @@ h2 {
   }
   
 button#hideTable {
-  display:none
+  display:none;
 }
-
   .searchImg {
     width: 50px;
     height: auto;
@@ -428,7 +405,6 @@ button#hideTable {
     flex-direction: column;
     align-items: center;
     width: 150px;
-    /* height: 270px; */
   }
 
   .coinImg {
@@ -474,16 +450,7 @@ p {
   font-size: small;
 }
 
-#select-currency {
-  width: 25%;
-  padding: 4px;
-  border: 2px solid #ebcb5b;
-  border-radius: 4px;
-  background-color: #f1f1f1;
-  font-size: small;
-}
-
-#select-currency2 {
+#select-currency, #select-currency2 {
   width: 25%;
   padding: 4px;
   border: 2px solid #ebcb5b;
@@ -504,18 +471,6 @@ p {
   border-radius: 4px;
 }
 
-#update-list-btn {
-  background-color: #0047AB; 
-  border: none;
-  color: white;
-  padding: 6px 13px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: small;
-  border-radius: 4px;
-}
-
 #get-crypto-btn:hover {
   background-color: #1434A4; 
   border: none;
@@ -528,28 +483,27 @@ p {
   border-radius: 4px;
 }
 
-#update-list-btn:hover {
-  background-color: #1434A4; 
-  border: none;
-  color: #ebcb5b;
-  padding: 12px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 12px;
-  border-radius: 4px;
-}
-
-#hideTable {
-  margin-bottom: 10px;
+#update-list-btn {
   background-color: #0047AB; 
   border: none;
   color: white;
-  padding: 12px 20px;
+  padding: 8px 13px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 12px;
+  font-size: small;
+  border-radius: 4px;
+}
+
+#update-list-btn:hover {
+  background-color: #1434a4; 
+  border: none;
+  color:#ebcb5b;
+  padding: 8px 13px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: small;
   border-radius: 4px;
 }
 
@@ -567,5 +521,16 @@ p {
 
 th.tableHeader {
   visibility: hidden;
+}
+
+#return {
+  color: #1434A4;
+  font-size: 12px;
+}
+
+#return:hover {
+ font-weight: 500;
+ color: orange;
+ font-size: 12px;
 }
 }
