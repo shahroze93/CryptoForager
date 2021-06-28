@@ -1,8 +1,4 @@
-// get coin list: https://api.coingecko.com/api/v3/coins/list
-// get supported currencies: https://api.coingecko.com/api/v3/simple/supported_vs_currencies
-// to get price of coins and which currencies to get it in: https://api.coingecko.com/api/v3/coins
-
-////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
 // INDIVIDUAL CRYPTO SEARCH SECTION
 ///////////////////////////////////////////////////////////////////////////////////
 
@@ -17,13 +13,8 @@ async function fetchData(name, curr) {
     const url2 = `https://api.coingecko.com/api/v3/coins/${name}`
     const response = await axios.get(url)
     const data = await axios.request(url2)
-    // console.log(response)
-    // console.log(response.data)
-    // console.log(response.data[name]) // solved using https://stackoverflow.com/questions/59490822/how-to-extract-price-using-javascript-from-coingecko-api-in-a-nested-array 
-    // console.log(data)
 
     const info = (data.data)
-    // console.log(info)
     showCrypto(response.data[name], info)
     return response
   } catch (error) {
@@ -33,9 +24,8 @@ async function fetchData(name, curr) {
     dataContainer.append(errorMsg)
   }
 }
-// fetchData('cardano') // for test purposes
 
-//below function helps limit decimal points - assitance taken from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed
+//below function helps limit decimal points - assistance taken from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed
 function decimal(x) {
   const deci = Number.parseFloat(x).toFixed(4);
   return deci
@@ -55,8 +45,7 @@ function numColor(num) {
 }
 function numColor2() {
   let x = document.getElementsByClassName("timePrice");
-  // console.log(x)
-  // console.log(x[0].innerText)
+
   for (i = 0; i < x.length; i++) {
     if (x[i].innerText < 0){
       x[i].style.color = "red";
@@ -71,12 +60,7 @@ function numColor2() {
 function showCrypto(data, info) {
   const curr = selectTag.value
   const fiat = curr.toUpperCase()
-  // console.log(fiat)
   const stat = Object.values(data)
-  // console.log(stat)
-  // console.log(typeof stat[0])
-  // console.log(decimal(stat[0]))
-  // console.log(info)
   const cryPrice = decimal(stat[0]) + ` ${[fiat]}`
   const crySym = (info.symbol).toUpperCase()
   const cryChange = decimal2(stat[3])
@@ -115,15 +99,13 @@ function showCrypto(data, info) {
   return cryptoData
 }
 
-// Post-MVP new section/table to show addtional price changes by hour, day, month, and year + button to toggle on and off
+// Post-MVP new section/table to show additional price changes by hour, day, month, and year + button to toggle on and off
 const rowPrice = document.querySelector('#rowPrice')
 
 function cryptoTable(info, curr, fiat) {
   const onePrc = decimal2(info.market_data.price_change_percentage_1h_in_currency[curr])
   const dayPrc = decimal2(info.market_data.market_cap_change_percentage_24h_in_currency[curr])
-  // console.log(dayPrc)
   const weekPrc = decimal2(info.market_data.price_change_percentage_7d_in_currency[curr])
-  // console.log(weekPrc)
   const fortnightPrc = decimal2(info.market_data.price_change_percentage_14d_in_currency[curr])
   const monthPrc = decimal2(info.market_data.price_change_percentage_30d_in_currency[curr])
   const yearPrc = decimal2(info.market_data.price_change_percentage_1y_in_currency[curr])
@@ -165,9 +147,7 @@ form.addEventListener('submit', (e) => {
   e.preventDefault()
   const inputValue = document.querySelector('#crypto-search').value.replace(" ", "-")
   const inputLow = inputValue.toLowerCase().replace(/ /g, "-"); // ADDED THIS IN BECAUSE API IS CASE SENSITIVE AND ONLY RECOGNIZES LOWER CASE - ALSO ADDED IN .REPLACE BECAUSE IF SEARCHING FOR 2 WORDS YOU NEED TO ADD "-"
-  // console.log(inputLow)
   const selectCurr = selectTag.value
-  // console.log(selectCurr)
   fetchData(inputLow, selectCurr)
   document.querySelector('#crypto-search').value = ''
   removeContent(imageContainer)
@@ -181,11 +161,8 @@ const updateDataBtn = document.querySelector("#update-data-btn")
 updateDataBtn.addEventListener('click', (e) => {
   e.preventDefault()
   const selectCurr = selectTag.value
-  // console.log(selectCurr)
   const cryID = document.querySelector("#cryID")
   const searchTerm = cryID.textContent
-  // console.log(searchTerm)
-  // console.log(searchTerm, selectCurr)
   fetchData(searchTerm, selectCurr)
   removeContent(imageContainer)
   removeContent(dataContainer)
@@ -198,21 +175,15 @@ updateDataBtn.addEventListener('click', (e) => {
 
 // // Create option list from reference currency list
 const selectTag = document.querySelector('#select-currency')
-// console.log(selectTag)
 const selectTag2 = document.querySelector('#select-currency2')
-// console.log(selectTag2)
 const formCurr = document.querySelector('.form-currency') 
-// console.log(formCurr)
 
 // Fetch data list for reference currency
 const getCurrList = async () => {
   try {
     const getCurrURL = 'https://api.coingecko.com/api/v3/simple/supported_vs_currencies'
     const response = await axios.get(getCurrURL)
-    // console.log(response)
-    // console.log(response.data)
     const CurrList = Object.values(response.data)
-    // console.log(CurrList)
     setOptions(CurrList)
   } catch (error) {
     console.error(error)
@@ -223,9 +194,7 @@ getCurrList()
 
 // Create option list from reference currency list
 function setOptions(list) {
-  // console.log(list)
   list.forEach((currency) => {
-    // console.log(currency)
     let optionTag = document.createElement('option')
     optionTag.textContent = currency
     optionTag.value = currency
@@ -255,9 +224,6 @@ async function getData() {
   try {
     const url3 = 'https://api.coingecko.com/api/v3/coins'
     const data = await axios.request(url3)
-    // console.log(data);
-    // console.log(data.data);
-    // console.log(data.data[0]);
     const coinsArray = (data.data)
     showCoinData(coinsArray)
     numColor2()
@@ -274,20 +240,15 @@ getData()
 function showCoinData(coinsArray) {
   const curr = selectTag2.value
   const fiat = curr.toUpperCase()
-  // console.log(fiat)
 
    for (i = 0; i < coinsArray.length; i++) {
-    //  console.log(coinsArray[i])
-    //  console.log(coinsArray[i].id)
     const sectionDiv = document.createElement("div")
     sectionDiv.classList.add("sectionDiv")
     const searchName = (coinsArray[i].name).toString().toLowerCase().replace(/ /g, "-");
     const searchID = (coinsArray[i].id)
     sectionDiv.addEventListener('click', (e) => {
       e.preventDefault()
-      // console.log(searchName)
       const selectCurr2 = selectTag2.value
-      // console.log(selectCurr2)
       fetchData(searchID, selectCurr2)
       removeContent(imageContainer)
       removeContent(dataContainer)
@@ -298,16 +259,13 @@ function showCoinData(coinsArray) {
 
     const coinName = document.createElement("h3")
     coinName.classList.add("coinName")
-    const sym = (coinsArray[i].symbol).toUpperCase() //put the symbol variable here because i want to add it next to the name of the coin
-    // console.log(sym)
+    const sym = (coinsArray[i].symbol).toUpperCase() 
     coinName.textContent = `${coinsArray[i].name} (${sym})`
-    // console.log(coinsArray[i].name)
     sectionDiv.append(coinName)
 
     const coinImg = document.createElement("img")
     coinImg.classList.add("coinImg") 
     coinImg.setAttribute('src', coinsArray[i].image.large)
-    // console.log(coinsArray[i].image.large)
     sectionDiv.append(coinImg)
 
     const coinSymbol = document.createElement('p')
@@ -318,40 +276,35 @@ function showCoinData(coinsArray) {
     const coinRank = document.createElement('p')
     coinRank.classList.add("coinRank")
     coinRank.textContent = `Market Cap Rank: ${coinsArray[i].market_data.market_cap_rank}`
-    // console.log(coinsArray[i].market_data.market_cap_rank)
     sectionDiv.append(coinRank)
      
     const coinPrice = document.createElement('h3')
     coinPrice.classList.add("coinPrice")
     const deciPrice = decimal(coinsArray[i].market_data.current_price[curr])
-    coinPrice.textContent = `Price: ${fiat} ${deciPrice}` //need to add a function where the currency changes like for the search option
-    // console.log(deciPrice)
+    coinPrice.textContent = `Price: ${fiat} ${deciPrice}` 
      sectionDiv.append(coinPrice)
      
     const coinPerChange = document.createElement('p')
     coinPerChange.classList.add("timePrice")
     const deciPerChange = decimal2(coinsArray[i].market_data.price_change_percentage_24h) + "%"
     coinPerChange.textContent = `24hr Change: ${deciPerChange}`
-    // console.log(deciSupply)
     sectionDiv.append(coinPerChange) 
     
     const coinCap = document.createElement('p')
     coinCap.classList.add("coinCap")
     const deciCap = decimal2((coinsArray[i].market_data.market_cap[curr])/1000000000) + ` Bil ${fiat}`
     coinCap.textContent = `Market Cap: ${deciCap}`
-    // console.log(deciCap)
     sectionDiv.append(coinCap) 
      
     const coinSupply = document.createElement('p')
     coinSupply.classList.add("coinSupply")
     const deciSupply = decimal2((coinsArray[i].market_data.circulating_supply)/1000000000) + ` Bil ${sym}`
     coinSupply.textContent = `Cir Supply: ${deciSupply}`
-    // console.log(deciSupply)
     sectionDiv.append(coinSupply)
   }
 }
 
-// form and return new array of coins with selected referenece currency
+// form and return new array of coins with selected reference currency
 const form2 = document.querySelector('.array-form')
 
 form2.addEventListener('click', (e) => {
@@ -360,7 +313,7 @@ form2.addEventListener('click', (e) => {
   getData(selectTag2)
 })
 
-// hide and display function assistance taken from https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
+// hide and display function 
 function hideShow() {
   let x = document.getElementById("desDiv");
   if (x.style.display === "none") {
@@ -370,8 +323,8 @@ function hideShow() {
   }
 }
 
-// Assistance taken from https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
+// Scroll function that takes the user to the #indvCrypto section once invoked
 function scrollFunction(place) {
-  document.documentElement.scrollTop = place; //scrolled to the #indvCrypto section
-  document.body.scrollTop = place; // for Safari
+  document.documentElement.scrollTop = place;
+  document.body.scrollTop = place; // for safari users
 }
