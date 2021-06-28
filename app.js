@@ -146,7 +146,7 @@ const form = document.querySelector('#crypto-form')
 form.addEventListener('submit', (e) => {
   e.preventDefault()
   const inputValue = document.querySelector('#crypto-search').value.replace(" ", "-")
-  const inputLow = inputValue.toLowerCase().replace(/ /g, "-"); // ADDED THIS IN BECAUSE API IS CASE SENSITIVE AND ONLY RECOGNIZES LOWER CASE - ALSO ADDED IN .REPLACE BECAUSE IF SEARCHING FOR 2 WORDS YOU NEED TO ADD "-"
+  const inputLow = inputValue.toLowerCase().replace(/ /g, "-"); // ADDED THIS IN BECAUSE API IS CASE SENSITIVE AND ONLY RECOGNIZES LOWER CASE - ALSO ADDED IN .REPLACE BECAUSE IF SEARCHING FOR 2 WORDS YOU NEED TO ADD "-". Assistance taken from https://stackoverflow.com/questions/19873002/how-to-replace-all-spaces-in-a-string/19873010
   const selectCurr = selectTag.value
   fetchData(inputLow, selectCurr)
   document.querySelector('#crypto-search').value = ''

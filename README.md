@@ -2,7 +2,7 @@
 
 ## CryptoForager
 
-The name of your project with deployed URL.
+https://shahroze93.github.io/CryptoForager/
 
 ## Project Description
 
@@ -4912,15 +4912,15 @@ https://imgur.com/NP3TRqV.jpg
 
 ## Project Schedule
 
-| Day     | Deliverable                                                     | Status     |
-| ------- | --------------------------------------------------------------- | ---------- |
-| June 21 | Prompt / Wireframes / Priority Matrix / Timeframes              | Complete   |
-| June 22 | Project Approval / Core Application Structure (HTML, CSS, etc.) | Complete   |
-| June 23 | Pseudocode / actual code                                        | Complete   |
-| June 24 | Initial Clickable Model / MVP                                   | Complete   |
-| June 25 | Advanced Styling                                                | Complete   |
-| June 26 | Post-MVP                                                        | Complete   |
-| June 28 | Presentations                                                   | Complete    |
+| Day     | Deliverable                                                     | Status   |
+| ------- | --------------------------------------------------------------- | -------- |
+| June 21 | Prompt / Wireframes / Priority Matrix / Timeframes              | Complete |
+| June 22 | Project Approval / Core Application Structure (HTML, CSS, etc.) | Complete |
+| June 23 | Pseudocode / actual code                                        | Complete |
+| June 24 | Initial Clickable Model / MVP                                   | Complete |
+| June 25 | Advanced Styling                                                | Complete |
+| June 26 | Post-MVP                                                        | Complete |
+| June 28 | Presentations                                                   | Complete |
 
 ## Priority Matrix
 
@@ -5029,4 +5029,4 @@ Use this section to document what changes were made and the reasoning behind tho
 
 In my original plan I wanted to add icons in the footer which I moved to the navbar in the top because I wanted to add my github, linkedin and a link to the API that I used. I made this decision for aesthetic and ease of access for users who visit my project. The icons I have in the navbar are shifted to a dropdown hamburger menu when my media query kicks in allowing for a cleaner view.
 
-In post-MVP I added in a number of features which would allow the user to have better analysis and ease of use with the site such as a drop down reference currency selection for changing the prices of all crypto that are returned in the market overview section. Then I added in a function whereby you can select a coin from the market overview section and it will scroll to the top and show you additional data without you having to type and search for the coin. Then the final addition I made was returning a table that showed the price changes over time so that users can see how the price of the crypto changed over different time intervals. To compliment this I added in two functions that I coded including one that limits the number of decimal places and one function that styles the price changes as red if negative and green if positive. 
+In post-MVP I added in a number of features which would allow the user to have better analysis and ease of use with the site such as a drop down reference currency selection for changing the prices of all crypto that are returned in the market overview section. Then I added in a function whereby you can select a coin from the market overview section and it will scroll to the top and show you additional data without you having to type and search for the coin. Then the final addition I made was returning a table that showed the price changes over time so that users can see how the price of the crypto changed over different time intervals. To compliment this I added in two functions that I coded including one that limits the number of decimal places and one function that styles the price changes as red if negative and green if positive.
